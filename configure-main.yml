@@ -1,0 +1,44 @@
+---
+- hosts: localhost
+
+  tasks:
+  - name: Install the packages that you mainly use
+    package:
+      name:
+       - keepassxc
+       - vim
+       - remmina
+       - sudo
+       - tmux
+       - nmap
+       - neofetch
+       - imagemagick
+       - fail2ban
+       - docker.io
+       - obs-studio
+       - virt-manager
+       - ansible
+       - python3-pip
+       - flatpak
+      state: latest
+  
+  - name: Install python-pip packages
+    pip:
+      name:
+        - docker
+        - docker-compose
+        - ansible
+
+  - name: Add the flathub flatpak repository remote to the user installation
+    flatpak_remote:
+      name: flathub
+      state: present
+      flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+      method: user
+  
+  - name: Install the obsidian package from flathub for current user
+    flatpak:
+      name: md.obsidian.Obsidian
+      state: present
+      method: user
+
