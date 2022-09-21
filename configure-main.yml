@@ -13,7 +13,6 @@
        - nmap
        - neofetch
        - imagemagick
-       - fail2ban
        - docker.io
        - obs-studio
        - virt-manager
