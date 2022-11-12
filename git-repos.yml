@@ -15,6 +15,7 @@
   ansible.builtin.git:
     repo: git@github.com:theintegrative/obsidian.git
     dest: /home/theintegrative/Documents/obsidian-vault/
+    accept_hostkey: yes
 
 - name: Clone brain workshop
   ansible.builtin.git:
