@@ -1,7 +1,4 @@
 ---
-- vars:
-  sshkey:
-
 - name: Clone main driver setup
   ansible.builtin.git:
     repo: git@github.com:theintegrative/main-driver-setup.git
