@@ -2,18 +2,18 @@
 ---
 - name: Clone main driver setup
   ansible.builtin.git:
-    repo: git@github.com:theintegrative/main-driver-setup.git
+    repo: git@github.com/theintegrative/main-driver-setup.git
     dest: /home/theintegrative/github/my-repos/main-driver-setup/
 
 - name: Clone home lab setup
   ansible.builtin.git:
-    repo: git@github.com:theintegrative/home-lab-setup-ansible.git
+    repo: git@github.com/theintegrative/home-lab-setup-ansible.git
     dest: /home/theintegrative/github/my-repos/home-lab-setup-ansible/
   ignore_errors: yes
 
 - name: Clone obsidian vault
   ansible.builtin.git:
-    repo: git@github.com:theintegrative/obsidian.git
+    repo: git@github.com/theintegrative/obsidian.git
     dest: /home/theintegrative/Documents/obsidian-vault/
     accept_hostkey: yes
 
