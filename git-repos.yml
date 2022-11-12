@@ -10,7 +10,7 @@
   ansible.builtin.git:
     repo: git@github.com:theintegrative/home-lab-setup-ansible.git
     dest: /home/theintegrative/github/my-repos/home-lab-setup-ansible/
-    key_file: "/home/theintegrative/.ssh/id_d25519"
+    key_file: "/home/theintegrative/.ssh/id_ed25519"
 
 - name: Clone obsidian vault
   ansible.builtin.git:
