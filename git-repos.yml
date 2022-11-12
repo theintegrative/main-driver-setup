@@ -11,7 +11,6 @@
     repo: git@github.com:theintegrative/home-lab-setup-ansible.git
     dest: /home/theintegrative/github/my-repos/home-lab-setup-ansible/
     key_file: "/home/theintegrative/.ssh/id_d25519"
-  ignore_errors: yes
 
 - name: Clone obsidian vault
   ansible.builtin.git:
