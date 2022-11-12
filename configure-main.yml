@@ -6,7 +6,7 @@
     user_name: theintegrative
   handlers:
     - name: Setup git repos
-      include_tasks: vagrant.yml
+      include_tasks: git-repos.yml
 
   tasks:
   - name: Install the packages that you mainly use
@@ -36,7 +36,7 @@
       path: "{{ item }}"
       state: directory
       mode: "0775"
-      recurse: false
+      recurse: true
       owner: "{{ user_name }}"
       group: "{{ user_name }}"
     loop:
@@ -50,4 +50,3 @@
       state: restarted
     loop:
       - docker
-      - libvirt
