@@ -1,0 +1,26 @@
+  
+---
+- name: Clone main driver setup
+    ansible.builtin.git:
+      repo: git@github.com:theintegrative/main-driver-setup.git
+      dest: /home/theintegrative/github/my-repos/main-driver-setup/
+
+- name: Clone home lab setup
+    ansible.builtin.git:
+      repo: git@github.com:theintegrative/home-lab-setup-ansible.git
+      dest: /home/theintegrative/github/my-repos/home-lab-setup-ansible/
+
+- name: Clone obsidian vault
+    ansible.builtin.git:
+      repo: git@github.com:theintegrative/obsidian.git
+      dest: /home/theintegrative/Documents/obsidian-vault/
+
+- name: Clone brain workshop
+    ansible.builtin.git:
+      repo: https://github.com/brain-workshop/brainworkshop.git
+      dest: /home/theintegrative/github/other-repos/brain-workshop/
+
+- name: Clone openhrv
+    ansible.builtin.git:
+      repo: https://github.com/JanCBrammer/OpenHRV.git
+      dest: /home/theintegrative/github/other-repos/openhrv/
