@@ -31,18 +31,6 @@
   - command: "true"
     notify: Setup git repos
   
-  - name: Create a directories if it does not exist
-    ansible.builtin.file:
-      path: "{{ item }}"
-      state: directory
-      mode: "0775"
-      recurse: true
-      owner: "{{ user_name }}"
-      group: "{{ user_name }}"
-    loop:
-      - /home/{{ user_name }}/Downloads/
-      - /home/{{ user_name }}/github/
-
   - name: Configure services that run on your system
     ansible.builtin.service:
       name: "{{ item }}"
