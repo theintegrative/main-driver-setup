@@ -1,0 +1,7 @@
+---
+- name: Install packages using apt
+  ansible.builtin.apt:
+    pkg: "{{ packages_all }}"
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600

@@ -1,0 +1,48 @@
+---
+testing: False
+first_run: False
+username: theintegrative
+user_home: "/home/{{ username }}/"
+ssh_key: "{{ user_home }}.ssh/id_ed25519"
+packages_list:
+  - keepassxc
+  - neovim
+  - remmina
+  - sudo
+  - tmux
+  - nmap
+  - neofetch
+  - docker
+  - docker-compose
+  - virt-manager
+  - ansible
+  - python3-pip
+  - htop
+  - git
+
+packages_all:
+  - keepassxc
+  - neovim
+  - remmina
+  - sudo
+  - tmux
+  - nmap
+  - neofetch
+  - virt-manager
+  - ansible
+  - htop
+  - git
+
+packages_pacman:
+  - python-pip
+  - docker-compose
+  - docker
+
+packages_apt:
+  - python3-pip
+  - docker-compose
+  - docker
+
+packages_dnf:
+  - sudo
+

@@ -3,31 +3,37 @@
   ansible.builtin.git:
     repo: git@github.com:theintegrative/main-driver-setup.git
     dest: /home/theintegrative/github/my-repos/main-driver-setup/
-    key_file: "/home/theintegrative/.ssh/id_ed25519" 
+    key_file: "{{ ssh_key }}"
   ignore_errors: yes
 
 - name: Clone home lab setup
   ansible.builtin.git:
     repo: git@github.com:theintegrative/home-lab-setup-ansible.git
     dest: /home/theintegrative/github/my-repos/home-lab-setup-ansible/
-    key_file: "/home/theintegrative/.ssh/id_ed25519"
+    key_file: "{{ ssh_key }}"
+
+- name: Clone home lab setup
+  ansible.builtin.git:
+    repo: git@github.com:theintegrative/hugo-depoyment.git
+    dest: /home/theintegrative/github/my-repos/hugo-deployment/
+    key_file: "{{ ssh_key }}"
 
 - name: Clone obsidian vault
   ansible.builtin.git:
     repo: git@github.com:theintegrative/obsidian.git
     dest: /home/theintegrative/Documents/obsidian-vault/
-    key_file: "/home/theintegrative/.ssh/id_ed25519"
+    key_file: "{{ ssh_key }}"
     accept_hostkey: yes
 
 - name: Clone brain workshop
   ansible.builtin.git:
     repo: git@github.com:brain-workshop/brainworkshop.git
     dest: /home/theintegrative/github/other-repos/brain-workshop/
-    key_file: "/home/theintegrative/.ssh/id_ed25519"
+    key_file: "{{ ssh_key }}"
 
 - name: Clone openhrv
   ansible.builtin.git:
     repo: git@github.com:JanCBrammer/OpenHRV.git
     dest: /home/theintegrative/github/other-repos/openhrv/
-    key_file: "/home/theintegrative/.ssh/id_ed25519"
+    key_file: "{{ ssh_key }}"
 

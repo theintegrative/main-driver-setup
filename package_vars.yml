@@ -1,0 +1,27 @@
+---
+packages_all:
+  - keepassxc
+  - neovim
+  - remmina
+  - sudo
+  - tmux
+  - nmap
+  - neofetch
+  - virt-manager
+  - ansible
+  - htop
+  - git
+
+packages_pacman:
+  - python3-pip
+  - docker-compose
+  - docker
+
+packages_apt:
+  - python3-pip
+  - docker-compose
+  - docker
+
+packages_redhad:
+  - docker-ce
+
