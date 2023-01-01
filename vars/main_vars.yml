@@ -1,9 +1,7 @@
 ---
-testing: False
-first_run: False
 username: theintegrative
 user_home: "/home/{{ username }}/"
-ssh_key: "{{ user_home }}.ssh/id_ed25519"
+ssh_key: "{{ user_home }}.ssh/id_rsa"
 packages_list:
   - keepassxc
   - neovim
@@ -45,4 +43,3 @@ packages_apt:
 
 packages_dnf:
   - sudo
-

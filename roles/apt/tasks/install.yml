@@ -1,7 +1,40 @@
 ---
+- name: One way to avoid apt_key once it is removed from your distro
+  block:
+    - name: somerepo |no apt key
+      ansible.builtin.get_url:
+        url: https://www.mongodb.org/static/pgp/server-6.0.asc
+        dest: /etc/apt/trusted.gpg.d/server-6.0.asc
+
+    - name: mongodb repo
+      ansible.builtin.apt_repository:
+        repo: "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse"
+        state: present
+    
+    - name: libssl1.1 repo
+      ansible.builtin.apt_repository:
+        repo: "deb http://security.ubuntu.com/ubuntu focal-security main"
+        state: present
+
 - name: Install packages using apt
   ansible.builtin.apt:
     pkg: "{{ packages_all }}"
     state: latest
     update_cache: yes
     cache_valid_time: 3600
+
+- name: Install mongodb packages 
+  ansible.builtin.apt:
+    pkg:
+      - mongodb-org
+      - libssl1.1
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Enable a timer unit for dnf-automatic
+  ansible.builtin.systemd:
+    name: mongod
+    state: started
+    enabled: yes
+
