@@ -12,10 +12,22 @@
     dest: /home/theintegrative/github/my-repos/home-lab-setup-ansible/
     key_file: "{{ ssh_key }}"
 
-- name: Clone home lab setup
+- name: Clone website and website content vault
   ansible.builtin.git:
-    repo: git@github.com:theintegrative/hugo-depoyment.git
-    dest: /home/theintegrative/github/my-repos/hugo-deployment/
+    repo: git@github.com:theintegrative/theintegrative.net.git
+    dest: /home/theintegrative/github/my-repos/theintegrative.net/
+    key_file: "{{ ssh_key }}"
+
+- name: Clone budgetting project
+  ansible.builtin.git:
+    repo: git@github.com:theintegrative/Budgeting.git
+    dest: /home/theintegrative/github/my-repos/Budgeting/
+    key_file: "{{ ssh_key }}"
+
+- name: Clone bookclub manager
+  ansible.builtin.git:
+    repo: git@github.com:theintegrative/Bookclub-manager.git
+    dest: /home/theintegrative/github/my-repos/Bookclub-manager/
     key_file: "{{ ssh_key }}"
 
 - name: Clone obsidian vault
