@@ -14,11 +14,3 @@ For testing iterations:
 vagrant up --no-provision
 vagrant provision
 ```
-
-## Todo list
-- [ ] add conditions for my frequently used OS's
-  - [x] Ubuntu
-  - [x] Archlinux
-  - [x] Centos
-  - [ ] Opensuse
-- [ ] add hugo
