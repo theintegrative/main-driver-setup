@@ -1,19 +1,11 @@
 - hosts: all
   become: yes
-  vars:
-    first_run: True
-    testing: False
   vars_files:
     - ./vars/main_vars.yml
   roles:
     - role: github
-      when: ( first_run == True )
-    - role: apt
-      when: (ansible_facts['distribution'] == "Ubuntu") and ( testing == False )
-    - role: pacman
-      when: (ansible_facts['os_family'] == "Archlinux") and ( testing == False )
     - role: dnf
-      when: (ansible_facts['distribution'] == "CentOS") and ( testing == False )
+      when: (ansible_facts['distribution'] == "CentOS")
 
   tasks:
   - name: Configure services that run on your system
