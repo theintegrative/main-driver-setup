@@ -11,24 +11,28 @@
     repo: git@github.com:theintegrative/home-lab-setup-ansible.git
     dest: /home/theintegrative/github/my-repos/home-lab-setup-ansible/
     key_file: "{{ ssh_key }}"
+  ignore_errors: yes
 
 - name: Clone website and website content vault
   ansible.builtin.git:
     repo: git@github.com:theintegrative/theintegrative.net.git
     dest: /home/theintegrative/github/my-repos/theintegrative.net/
     key_file: "{{ ssh_key }}"
+  ignore_errors: yes
 
 - name: Clone budgetting project
   ansible.builtin.git:
     repo: git@github.com:theintegrative/Budgeting.git
     dest: /home/theintegrative/github/my-repos/Budgeting/
     key_file: "{{ ssh_key }}"
+  ignore_errors: yes
 
 - name: Clone bookclub manager
   ansible.builtin.git:
     repo: git@github.com:theintegrative/Bookclub-manager.git
     dest: /home/theintegrative/github/my-repos/Bookclub-manager/
     key_file: "{{ ssh_key }}"
+  ignore_errors: yes
 
 - name: Clone obsidian vault
   ansible.builtin.git:
@@ -36,16 +40,18 @@
     dest: /home/theintegrative/Documents/obsidian-vault/
     key_file: "{{ ssh_key }}"
     accept_hostkey: yes
+  ignore_errors: yes
 
 - name: Clone brain workshop
   ansible.builtin.git:
     repo: git@github.com:brain-workshop/brainworkshop.git
     dest: /home/theintegrative/github/other-repos/brain-workshop/
     key_file: "{{ ssh_key }}"
+  ignore_errors: yes
 
 - name: Clone openhrv
   ansible.builtin.git:
     repo: git@github.com:JanCBrammer/OpenHRV.git
     dest: /home/theintegrative/github/other-repos/openhrv/
     key_file: "{{ ssh_key }}"
-
+  ignore_errors: yes
