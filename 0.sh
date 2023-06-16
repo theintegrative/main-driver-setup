@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Hello world"
-SSH_PRIV_KEY="~/.ssh/id_ed25519"
+SSH_PRIV_KEY="$HOME/.ssh/id_ed25519"
 SSH_PUB_KEY="$SSH_PRIV_KEY.pub"
 sudo zypper in -y keepassxc ansible git gh glab
 mkdir -p ~/.ssh
