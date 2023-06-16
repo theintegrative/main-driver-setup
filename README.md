@@ -6,5 +6,5 @@ wget -qO - https://raw.githubusercontent.com/theintegrative/main-driver-setup/op
 
 ## Testing
 ```
-docker run -v ./test:/bin/test -it opensuse/tumbleweed
+docker run -v ./test:/bin/run -it opensuse/tumbleweed
 ```
