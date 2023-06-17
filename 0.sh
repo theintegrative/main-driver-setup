@@ -7,7 +7,7 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 ssh-keygen -t ed25519 -f "$SSH_PRIV_KEY"
 gh auth login -h github.com -p ssh -w -s admin:public_key
-if [ ! -v $TESING ]; then
+if [ -z $TESING ]; then
 	echo "Testing $(date)"	
 else
 	glab auth login -h gitlab.com 
