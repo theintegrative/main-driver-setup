@@ -20,3 +20,10 @@ test_driver:
   image: theintegrative/driver
   script:
     - curl https://raw.githubusercontent.com/theintegrative/main-driver-setup/opensuse-thinclient/0.sh | bash
+
+# This one must run gh and glab
+test_driver:
+  stage: test
+  image: theintegrative/driver
+  script:
+    - curl https://raw.githubusercontent.com/theintegrative/main-driver-setup/opensuse-thinclient/0.sh | bash
