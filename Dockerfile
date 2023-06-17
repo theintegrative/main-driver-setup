@@ -1,3 +1,3 @@
 FROM opensuse/tumbleweed
 
-RUN sudo zypper in -y keepassxc ansible git gh glab 
+RUN zypper in -y sudo keepassxc ansible git gh glab
