@@ -3,7 +3,10 @@ stages:
   - test
 
 build_driver:
+  image: docker:dind
   stage: build
+  tags:
+    - docker-dind
   script:
     - docker build -t theintegrative/driver:latest .
   rules:
