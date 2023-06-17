@@ -1,1 +1,1 @@
-docker run -v ./run:/bin/run -it opensuse/tumbleweed -e TESTING=yes
+docker run -e TESTING=yes -v ./run:/bin/run -it opensuse/tumbleweed 
