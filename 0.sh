@@ -6,7 +6,7 @@ sudo zypper in -y keepassxc ansible git gh glab
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 ssh-keygen -t ed25519 -f "$SSH_PRIV_KEY"
-if [ $TESTING == "true" ]; then
+if [ ! -z $TESTING ]; then
 	echo "Testing $(date)"	
 else
 	gh auth login -h github.com -p ssh -w -s admin:public_key
