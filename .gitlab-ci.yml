@@ -20,4 +20,4 @@ test_driver:
   image: theintegrative/driver
   script:
     - curl https://raw.githubusercontent.com/theintegrative/main-driver-setup/opensuse-thinclient/0.sh > script.sh 
-    - cat script.sh
+    - bash script.sh
