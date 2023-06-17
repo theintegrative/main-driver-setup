@@ -15,7 +15,6 @@ build_driver:
 
 test_driver:
   variables:
-    TESTING: ""
   stage: test
   image: theintegrative/driver
   script:
