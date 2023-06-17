@@ -1,0 +1,3 @@
+#!/bin/bash
+#For OpenSuse
+zypper search --installed-only | grep i+ | grep -v -f exclude_packages | awk '{print $3}'
