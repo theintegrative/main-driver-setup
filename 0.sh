@@ -7,5 +7,10 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 ssh-keygen -t ed25519 -f "$SSH_PRIV_KEY"
 gh auth login -h github.com -p ssh -w -s admin:public_key
-glab auth login -h gitlab.com 
-glab ssh-key add -t "main driver" "$SSH_PUB_KEY"
+if [ -v $TESING ]; then
+	echo "Testing $(date)"	
+else
+	glab auth login -h gitlab.com 
+	glab ssh-key add -t "main driver" "$SSH_PUB_KEY"
+fi
+ansible-playbook -i localhost, --connection="local" -bK configure-main.yml
