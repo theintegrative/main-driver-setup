@@ -1,0 +1,17 @@
+stages:
+  - test
+  - build
+
+build_driver:
+  stage: build
+  script:
+    - docker build -t theintegrative/driver:latest .
+  rules:
+    - changes:
+        - Dockerfile
+
+test_driver:
+  stage: test
+  image: theintegrative/driver
+  script:
+    - curl https://raw.githubusercontent.com/theintegrative/main-driver-setup/opensuse-thinclient/0.sh | bash
