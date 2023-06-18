@@ -13,5 +13,5 @@ else
 	glab auth login -h gitlab.com 
 	glab ssh-key add -t "main driver" "$SSH_PUB_KEY"
 fi
-ansible-galaxy install -r ansible/requirements.yml
+sudo ansible-galaxy install -r ansible/requirements.yml
 ansible-playbook -i localhost, --connection="local" -b ansible/configure.yml
