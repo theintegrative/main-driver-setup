@@ -1,0 +1,2 @@
+zypper in sudo
+curl https://raw.githubusercontent.com/theintegrative/main-driver-setup/opensuse-thinclient/0.sh | bash

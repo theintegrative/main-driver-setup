@@ -1,1 +1,4 @@
-docker run -e TESTING=yes -v ./run:/bin/run -it opensuse/tumbleweed 
+#!/bin/bash
+IMAGE="theintegrative/driver:latest"
+docker build -t $IMAGE .
+docker run -e TESTING=yes -v ./utils/run:/bin/run -v ./ansible/:/ansible/ -it $IMAGE 
