@@ -2,16 +2,35 @@ user_name: theintegrative
 user_home: "/home/{{ user_name }}/"
 ssh_key: "{{ user_home }}.ssh/id_rsa"
 packages:
-  - keepassxc
-  - neovim
-  - tmux
-  - nmap
-  - neofetch
-  - docker
+  - alien
   - ansible
-  - python3-pip
-  - htop
+  - avahi
+  - docker
+  - firewalld
+  - flatpak
+  - gcc-c++
+  - gh
   - git
   - glab
+  - htop
+  - i3
+  - keepassxc
+  - konsole
+  - neofetch
+  - neovim
+  - NetworkManager
+  - nmap
+  - openssh
+  - opi
+  - os-prober
+  - pavucontrol
+  - pipewire-aptx
+  - pipewire-pulseaudio
+  - stremio
+  - tmux
+  - vlc-beta
+  - wireplumber
+  - yank
+  - python3-pip
 services:
   - docker
