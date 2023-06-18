@@ -1,16 +1,19 @@
-- hosts: all
-  become: yes
+- name: Post install opensuse thin client
+  hosts: all
+  become: true
+  var_files:
+    - vars.yml
   tasks:
-  - name: Refresh repositories and update package openssl
-    community.general.zypper:
-      name: "{{ packages }}"
-      state: present
-      update_cache: true
+    - name: Get packages
+      community.general.zypper:
+        name: "{{ packages }}"
+        state: present
+        update_cache: true
 
-  - name: Configure services that run on your system
-    ansible.builtin.service:
-      name: "{{ item }}"
-      enabled: true
-      state: restarted
-    loop: "{{ services }}"
-    when: 0 > 1
+    - name: Configure services that run on your system
+      ansible.builtin.service:
+        name: "{{ item }}"
+        enabled: true
+        state: restarted
+      loop: "{{ services }}"
+      when: 0 > 1

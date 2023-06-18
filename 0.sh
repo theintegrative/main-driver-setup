@@ -2,7 +2,7 @@
 echo "Hello world"
 SSH_PRIV_KEY="$HOME/.ssh/id_ed25519"
 SSH_PUB_KEY="$SSH_PRIV_KEY.pub"
-sudo zypper --non-interactive in -y keepassxc ansible git gh glab
+sudo zypper --non-interactive in -y python3-pip keepassxc ansible git gh glab
 pip install ansible
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
