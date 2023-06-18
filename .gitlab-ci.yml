@@ -19,5 +19,5 @@ test_driver:
   stage: test
   image: theintegrative/driver
   script:
-    - curl https://raw.githubusercontent.com/theintegrative/main-driver-setup/opensuse-thinclient/0.sh > script.sh 
-    - bash script.sh
+    - curl https://raw.githubusercontent.com/theintegrative/main-driver-setup/opensuse-thinclient/0.sh > 0.sh 
+    - bash 0.sh
