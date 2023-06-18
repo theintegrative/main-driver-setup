@@ -1,4 +1,4 @@
 #!/bin/bash
 IMAGE="theintegrative/driver:latest"
 docker build -t $IMAGE .
-docker run -e TESTING=yes -v ./utils/run:/bin/run -v ./ansible/:/ansible/ -it $IMAGE 
+docker run -e TESTING=yes -v ./utils/run:/bin/run -v ./ansible/:/home/theintegrative/ansible/ -it $IMAGE 
