@@ -1,7 +1,9 @@
-ARG $LARGE_SECRET
 FROM opensuse/leap
-RUN useradd theintegrative
-RUN passwd $user --stdin $LARGE_SECRET
-RUN usermod -aG sudo username
-RUN zypper in -y sudo keepassxc ansible git gh glab
-USER john
+ARG username="theintegrative"
+ARG password="verysecretboob"
+RUN zypper --non-interactive in -y sudo keepassxc ansible git gh glab
+RUN useradd $username -m
+RUN echo $username:$password | chpasswd
+RUN echo "$username ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers
+USER $username
+WORKDIR /home/$username/
