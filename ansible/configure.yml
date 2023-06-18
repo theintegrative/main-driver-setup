@@ -5,10 +5,10 @@
     - vars.yml
   tasks:
     - name: Get packages
-      community.general.zypper:
-        name: "{{ packages }}"
+      zypper:
+        name: sudo
         state: present
-        update_cache: true
+          #update_cache: true
 
     - name: Configure services that run on your system
       ansible.builtin.service:
